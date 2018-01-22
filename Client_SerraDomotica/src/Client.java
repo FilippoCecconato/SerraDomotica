@@ -1,4 +1,5 @@
 
+import Control.Controllore;
 import View.Manovali;
 
 /*
@@ -18,6 +19,7 @@ public class Client {
      */
     public static void main(String[] args) {
         Manovali a = new Manovali();
+        Controllore b= new Controllore(a);
         a.setVisible(true);
     }
     

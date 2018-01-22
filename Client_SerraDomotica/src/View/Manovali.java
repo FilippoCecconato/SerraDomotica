@@ -315,6 +315,60 @@ public class Manovali extends javax.swing.JFrame {
     public JTextField getjTextField2() {
         return jTextField2;
     }
+
+    public void setjCheckBox1(JCheckBox jCheckBox1) {
+        this.jCheckBox1 = jCheckBox1;
+    }
+
+    public void setjCheckBox2(JCheckBox jCheckBox2) {
+        this.jCheckBox2 = jCheckBox2;
+    }
+
+    public void setjCheckBox3(JCheckBox jCheckBox3) {
+        this.jCheckBox3 = jCheckBox3;
+    }
+
+    public void setjCheckBox4(JCheckBox jCheckBox4) {
+        this.jCheckBox4 = jCheckBox4;
+    }
+
+    public void setjCheckBox5(JCheckBox jCheckBox5) {
+        this.jCheckBox5 = jCheckBox5;
+    }
+
+    public void setjCheckBox6(JCheckBox jCheckBox6) {
+        this.jCheckBox6 = jCheckBox6;
+    }
+
+    public void setjCheckBox7(JCheckBox jCheckBox7) {
+        this.jCheckBox7 = jCheckBox7;
+    }
+
+    public void setjCheckBox8(JCheckBox jCheckBox8) {
+        this.jCheckBox8 = jCheckBox8;
+    }
+
+    public void setjButton1(JButton jButton1) {
+        this.jButton1 = jButton1;
+    }
+
+    public void setjButton2(JButton jButton2) {
+        this.jButton2 = jButton2;
+    }
+
+    public void setjButton3(JButton jButton3) {
+        this.jButton3 = jButton3;
+    }
+
+    public void setjTextField1(JTextField jTextField1) {
+        this.jTextField1 = jTextField1;
+    }
+
+    public void setjTextField2(JTextField jTextField2) {
+        this.jTextField2 = jTextField2;
+    }
+    
+    
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
