@@ -57,16 +57,12 @@ public class Controllore implements ActionListener{
             x.getjCheckBox8().setSelected(false);
         }
         
-        if(e.getSource()==x.getjButton1()){
-            System.out.println("Sono qui");
+        if(e.getSource()==x.getjButton1()){ //Bottone per l'invio
+            
             if(!x.getjTextField1().getText().equals("")&& !x.getjTextField2().getText().equals("")){
+                
 		try {
-                    ds = new DatagramSocket();
-                    x.getjTextField1().setText(x.getjTextField1().getText());
-                    x.getjTextField2().setText(x.getjTextField2().getText());
-                    x.getjTextField1().setText("");
-                    x.getjTextField2().setText("");
-                    
+                    ds = new DatagramSocket();          
                     byte[] bufferOut = new byte[2];
                     Integer cont = 0;
                     Integer lum = 0;
@@ -87,17 +83,19 @@ public class Controllore implements ActionListener{
 			cont += 64;
                     if(x.getjCheckBox8().isSelected())
 			cont += 128;
+                    
                     lum = x.getjSlider1().getValue();
                     bufferOut[0] = cont.byteValue();
-                    bufferOut[2] = lum.byteValue();
+                    bufferOut[1] = lum.byteValue();
+                    System.out.println("ip "+ x.getjTextField1().getText()+" porta " + x.getjTextField2().getText());
                     try {
+                        System.out.println("ip "+ x.getjTextField1().getText()+" porta " + x.getjTextField2().getText());
                         DatagramPacket dp = new DatagramPacket(bufferOut, bufferOut.length, InetAddress.getByName(x.getjTextField1().getText()), Integer.parseInt(x.getjTextField2().getText()));
                         ds.send(dp);
                     } catch (NumberFormatException | IOException e1) {
-			e1.printStackTrace();
                     }
 
-		} catch (NumberFormatException | SocketException e1) {e1.printStackTrace();}
+		} catch (NumberFormatException | SocketException e1) {}
             }
             else{
                 JOptionPane.showMessageDialog(x, "IP o PORTA MANCANTI", "ATTENZIONE", 2);
