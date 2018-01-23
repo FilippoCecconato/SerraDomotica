@@ -63,10 +63,12 @@ public class Controllore implements ActionListener{
                 
 		try {
                     ds = new DatagramSocket();          
-                    byte[] bufferOut = new byte[2];
+                    byte[] bufferOut = new byte[4];
                     Integer cont = 0;
                     Integer lum = 0;
-			
+                    Integer temperatura = 0;
+                    Integer umidita = 0;
+                            
                     if(x.getjCheckBox1().isSelected())
 			cont += 1;
                     if(x.getjCheckBox2().isSelected())
@@ -85,9 +87,14 @@ public class Controllore implements ActionListener{
 			cont += 128;
                     
                     lum = x.getjSlider1().getValue();
+                    temperatura=x.getjSlider2().getValue();
+                    umidita=x.getjSlider3().getValue();
                     bufferOut[0] = cont.byteValue();
                     bufferOut[1] = lum.byteValue();
-                    System.out.println("ip "+ x.getjTextField1().getText()+" porta " + x.getjTextField2().getText());
+                    bufferOut[2] = temperatura.byteValue();
+                    bufferOut[3] = umidita.byteValue();
+                    
+                    System.out.println("ip "+ x.getjTextField1().getText()+" porta " + x.getjTextField2().getText()); //occorre per vedere se tutto funziona livello sviluppatore
                     try {
                         System.out.println("ip "+ x.getjTextField1().getText()+" porta " + x.getjTextField2().getText());
                         DatagramPacket dp = new DatagramPacket(bufferOut, bufferOut.length, InetAddress.getByName(x.getjTextField1().getText()), Integer.parseInt(x.getjTextField2().getText()));
