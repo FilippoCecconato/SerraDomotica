@@ -1,4 +1,5 @@
 
+import Control.Controllore;
 import View.Serra;
 
 /*
@@ -18,6 +19,7 @@ public class Server {
      */
     public static void main(String[] args) {
         Serra a=new Serra();
+        Controllore b = new Controllore(a);
         a.setVisible(true);
     }
     

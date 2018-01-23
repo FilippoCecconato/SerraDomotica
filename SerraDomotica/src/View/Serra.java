@@ -318,9 +318,6 @@ public class Serra extends javax.swing.JFrame {
         this.jTextField9 = jTextField9;
     }
 
-    public JList<String> getjList1() {
-        return jList1;
-    }
     
     
 
